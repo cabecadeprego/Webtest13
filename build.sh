@@ -8,13 +8,13 @@ mkdir -p dist
 
 go mod tidy
 
-CGO_ENABLED="0" go build -ldflags="-s -w" -a -v -o TechChallengeApp .
+CGO_ENABLED="0" go build -ldflags="-s -w" -a -v -o Webtest13 .
 
 pushd ui
-rice append --exec ../TechChallengeApp
+rice append --exec ../Webtest13
 popd
 
-cp TechChallengeApp dist/
+cp Webtest13 dist/
 cp conf.toml dist/
 
-rm TechChallengeApp
+rm Webtest13
