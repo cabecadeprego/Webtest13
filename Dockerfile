@@ -14,9 +14,9 @@ RUN dir=$(mktemp -d) \
 
 RUN go get github.com/GeertJohan/go.rice/rice
 
-WORKDIR $GOPATH/src/github.com/servian/TechChallengeApp
+WORKDIR $GOPATH/src/github.com/marcosranes/Webtest13
 
-COPY go.mod go.sum $GOPATH/src/github.com/servian/TechChallengeApp/
+COPY go.mod go.sum $GOPATH/src/github.com/marcosranes/Webtest13/
 
 RUN go mod tidy
 
