@@ -27,7 +27,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/servian/TechChallengeApp/db"
+	"github.com/marcosranes/Webtest13/db"
 )
 
 // Config configuration for ui package
