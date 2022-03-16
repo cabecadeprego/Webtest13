@@ -18,6 +18,7 @@ WORKDIR $GOPATH/src/github.com/marcosranes/Webtest13
 
 COPY go.mod go.sum $GOPATH/src/github.com/marcosranes/Webtest13/
 
+RUN go mod init
 RUN go mod tidy
 
 COPY . .
