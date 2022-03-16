@@ -34,7 +34,7 @@ var cfg *daemon.Config
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "TechChallengeApp",
+	Use:   "Webtest13",
 	Short: "Application used to test potential candidates at Servian",
 	Long: `
  .:ooooool,      .:odddddl;.      .;ooooc. .l,          ;c.    ::.      'coddddoc'         ,looooooc.                  
