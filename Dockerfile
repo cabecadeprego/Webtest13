@@ -18,23 +18,22 @@ WORKDIR $GOPATH/src/github.com/marcosranes/Webtest13
 
 COPY go.mod go.sum $GOPATH/src/github.com/marcosranes/Webtest13/
 
-RUN go mod init
 RUN go mod tidy
 
 COPY . .
 
-RUN CGO_ENABLED="0" go build -ldflags="-s -w" -a -o /TechChallengeApp
+RUN CGO_ENABLED="0" go build -ldflags="-s -w" -a -o /Webtest13
 RUN swagger generate spec -o /swagger.json \
  && cp /swagger.json ui/assets/swagger/ \
  && cp -R /tmp/swagger/dist ui/assets/swagger
 
-RUN cd ui && rice append --exec /TechChallengeApp
+RUN cd ui && rice append --exec /Webtest13
 
 FROM alpine:latest
 
-WORKDIR /TechChallengeApp
+WORKDIR /Webtest13
 
 COPY conf.toml ./conf.toml
-COPY --from=build /TechChallengeApp TechChallengeApp
+COPY --from=build /Webtest13 Webtest13
 
-ENTRYPOINT [ "./TechChallengeApp" ]
+ENTRYPOINT [ "./Webtest13" ]
