@@ -12,9 +12,7 @@ RUN dir=$(mktemp -d) \
     && mv /tmp/swagger-ui-$SWAGGER_UI_VERSION /tmp/swagger \
     && sed -i 's#"https://petstore\.swagger\.io/v2/swagger\.json"#"./swagger.json"#g' /tmp/swagger/dist/index.html
 
-RUN go mod init $GOPATH/src/github.com/marcosranes/Webtest13
-
-RUN go get github.com/GeertJohan/go.rice/rice
+RUN go install github.com/GeertJohan/go.rice/rice@latest
 
 WORKDIR $GOPATH/src/github.com/marcosranes/Webtest13
 
