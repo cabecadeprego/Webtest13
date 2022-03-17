@@ -7,7 +7,7 @@ ARG SWAGGER_UI_VERSION=3.20.9
 RUN dir=$(mktemp -d) \
     && git clone https://github.com/go-swagger/go-swagger "$dir" \
     && cd "$dir" \
-    && go env -w GO111MODULE=off \
+    && go env -w GO111MODULE=auto \
     && go install ./cmd/swagger \
     && curl -sfL https://github.com/swagger-api/swagger-ui/archive/v$SWAGGER_UI_VERSION.tar.gz | tar xz -C /tmp/ \
     && mv /tmp/swagger-ui-$SWAGGER_UI_VERSION /tmp/swagger \
