@@ -7,6 +7,7 @@ ARG SWAGGER_UI_VERSION=3.20.9
 RUN dir=$(mktemp -d) \
     && git clone https://github.com/go-swagger/go-swagger "$dir" \
     && cd "$dir" \
+    && go mod init v1
     && go env -w GO111MODULE=auto \
     && go install ./cmd/swagger \
     && curl -sfL https://github.com/swagger-api/swagger-ui/archive/v$SWAGGER_UI_VERSION.tar.gz | tar xz -C /tmp/ \
@@ -17,7 +18,6 @@ WORKDIR $GOPATH/src/github.com/marcosranes/Webtest13
 
 COPY go.mod go.sum $GOPATH/src/github.com/marcosranes/Webtest13/
 
-RUN go mod init v1
 RUN go mod tidy
 
 COPY . .
