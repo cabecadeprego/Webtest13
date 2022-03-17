@@ -13,6 +13,8 @@
 [report]: https://goreportcard.com/report/github.com/Servian/TechChallengeApp
 [license-badge]: https://img.shields.io/github/license/Servian/TechChallengeApp.svg?style=flat
 [license]: https://github.com/Servian/TechChallengeApp/license
+###
+[![Build and deploy Docker app to Azure](https://github.com/marcosranes/Webtest13/actions/workflows/devops-starter-workflow.yml/badge.svg)](https://github.com/marcosranes/Webtest13/actions/workflows/devops-starter-workflow.yml)
 
 ## Overview
 
