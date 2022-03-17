@@ -4,7 +4,7 @@ RUN apk add --no-cache curl git alpine-sdk
 
 ARG SWAGGER_UI_VERSION=3.20.9
 
-RUN go mod init github.com/marcosranes/Webtest13
+RUN go mod init github.com/marcosranes/Webtest13 \
     && go get -d -v github.com/go-swagger/go-swagger \
     && cd $GOPATH/src/github.com/go-swagger/go-swagger \
     && go mod tidy \
