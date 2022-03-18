@@ -1,4 +1,4 @@
-FROM golang:alpine AS build
+FROM golang:1.13-alpine AS build
 
 RUN apk add --no-cache curl git alpine-sdk
 
@@ -7,8 +7,7 @@ ARG SWAGGER_UI_VERSION=3.20.9
 RUN dir=$(mktemp -d) \
     && git clone https://github.com/go-swagger/go-swagger "$dir" \
     && cd "$dir" \
-    && go mod init v1
-    && go env -w GO111MODULE=auto \
+    && go mod init v1 \
     && go install ./cmd/swagger \
     && curl -sfL https://github.com/swagger-api/swagger-ui/archive/v$SWAGGER_UI_VERSION.tar.gz | tar xz -C /tmp/ \
     && mv /tmp/swagger-ui-$SWAGGER_UI_VERSION /tmp/swagger \
